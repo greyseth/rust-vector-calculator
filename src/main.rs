@@ -56,13 +56,22 @@ fn main() {
     let mut vectors: Vec<Vector3> = Vec::new();
     
     loop {
-        print!("Enter command: ");
+        print!("Enter command ('help' for a list of commands): ");
         stdout().flush().expect("Failed to flush output");
         let mut menu_input: String = String::new();
         stdin().read_line(&mut menu_input).expect("Failed to process input");
         match menu_input.trim() {
             "help" => {
-                println!("The help menu is WIP");
+                println!("Available commands:");
+                println!("  help        - Display this help menu");
+                println!("  add         - Add a new vector");
+                println!("  view        - View all vectors and their status (normalized or not)");
+                println!("  normalize   - Normalize a vector (make its magnitude 1)");
+                println!("  magnitude   - Calculate the magnitude of a vector");
+                println!("  dot         - Calculate the dot product of two vectors");
+                println!("  angle       - Calculate the angle between two vectors");
+                println!("  scalar      - Multiply a vector by a scalar value");
+                println!("  exit        - Exit the program");
                 continue;
             },
             "add" => {
